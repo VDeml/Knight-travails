@@ -15,5 +15,9 @@ function knightMoves(startArr, endArr) {
     //
 }
 
-knightMoves([0, 5], [])
+export function testOne() {
+    return 1
+}
+
+knightMoves([0, 5], [1, 3])
 console.log("Script finished")
