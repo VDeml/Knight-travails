@@ -53,6 +53,7 @@ export function knightMoves(startArr = [0,0], endArr = [1,2]) {
             const currentSquare = queue[tracker]
             // check if we found the finish square
             if(currentSquare[0] === finishSquare[0] && currentSquare[1] === finishSquare[1]) {
+                
                 return
             }
             searchPossibleJumps(currentSquare)
@@ -69,8 +70,10 @@ export function knightMoves(startArr = [0,0], endArr = [1,2]) {
     }
     solve(startingSquare)
 
-    return reconstructPath().reverse()
+    const correctPath = reconstructPath().reverse()
+    console.log(`You made it in ${correctPath.length - 1} moves! Here's your path:`);
+            correctPath.forEach(square => console.log(square));
 }
 
 
-console.log(knightMoves([0,0], [1,2]))
+
